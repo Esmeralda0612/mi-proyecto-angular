@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-carrito',
   imports: [],
   templateUrl: './carrito.component.html',
-  styleUrl: './carrito.component.css'
+  styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent {
 

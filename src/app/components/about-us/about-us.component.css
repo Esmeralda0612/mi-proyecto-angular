@@ -1,0 +1,36 @@
+.content-AU{
+    margin: 0 auto;
+    width: 50%;
+    text-align: justify;
+    
+}
+.content-AU img{
+    width: 30%;
+    height: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5%;
+    display: block;
+}
+
+.rrss{
+    display: flex;
+    justify-content: center;
+}
+
+.rrss img{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 600px){
+    .content-AU{
+        width: 80%;
+        font-size: 1.2em;
+    }
+    .content-AU img{
+        width: 50%;
+        height: 50%;
+    }
+}

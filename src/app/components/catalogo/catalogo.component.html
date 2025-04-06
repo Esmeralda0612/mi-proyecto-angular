@@ -1,1 +1,141 @@
-<p>catalogo works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart with Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../catalogo/catalogo.component.css">
+</head>
+<body>
+    <header class="header-cart">
+      <h1>Carrito</h1>
+      <div class="cart-icon" id="cart-icon">
+          🛒 <span class="cart-count" 
+          id="cart-count">0</span>
+      </div>
+    </header>
+
+    <main class="main-content container">
+      <div class="product-grid" 
+      id="product-grid">
+          <!-- Products will be loaded here -->
+      </div>
+    </main>
+
+    <aside class="cart-sidebar" id="cart-sidebar">
+      <h2>Your Cart</h2>
+      <button class="close-btn" 
+      id="close-cart">&times;</button>
+      <div id="cart-items-container">
+          <!-- Cart items will be loaded here -->
+      </div>
+      <button class="checkout-btn" 
+      id="checkout-btn">Checkout</button>
+    </aside>
+
+  <script>
+      const products = [
+          { id: 1, name: 'Caraval', price: 19.90, image: 'https://th.bing.com/th/id/OIP.SazksNm6e0J7C3NXmOG5qAHaFj?w=182&h=136&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
+          { id: 2, name: 'Cuando no queden más estrellas que contar', price: 17.95, image: 'https://th.bing.com/th/id/OIP.pI_RNlDk7w7Fm6DQ1rBlZgHaD4?w=282&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
+          { id: 3, name: 'El faro de los amores dormidos', price: 17.99, image: 'https://th.bing.com/th/id/OIP.TC4FVDOMJTw1p6C-buJ1gAHaD4?w=330&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
+          { id: 4, name: 'Ana de las Tejas Verdes', price: 25.99, image: 'https://th.bing.com/th/id/OIP.jjojPSU8yKG3r0yxaeL6gQHaJK?w=182&h=226&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
+          { id: 5, name: 'Destrózame', price: 19.45, image: 'https://th.bing.com/th/id/OIP.JHaXspSPisC7bJjktPcfqAHaEK?w=306&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
+          { id: 5, name: 'Estuche Saga Meses a tu lado', price: 62.65, image: 'https://th.bing.com/th/id/OIP.kmvc6Pl413Z0S7UPidd-5AHaH6?w=145&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
+          { id: 5, name: 'No confíes en Asher Hall', price: 18.95, image: 'https://th.bing.com/th/id/OIP.PzOWwI8Kq1y623WI9uHFXwAAAA?w=172&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
+          { id: 5, name: 'Hija de la Tierra', price: 18.00, image: 'https://th.bing.com/th/id/OIP.po0wjzXOe-tofHFOg5ZM0QAAAA?w=150&h=150&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
+          { id: 5, name: 'A Dos Metros de Ti', price: 17.95, image: 'https://th.bing.com/th/id/OIP.NxixbUXCtfF5DFm2PRJYogHaHa?pid=ImgDet&w=185&h=185&c=7&dpr=1,3' },
+          { id: 6, name: 'El día que dejó de nevar en Alaska', price: 19.99, image: 'https://th.bing.com/th/id/OIP.2QuG_4xNubrkqYc86CcWlgHaHa?w=182&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
+          { id: 5, name: 'Hasta que nos quedemos sin estrellas', price: 17.95, image: 'https://th.bing.com/th/id/OIP.C5Hja9L-dqzREiTXVeQv6QHaHa?w=177&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
+          { id: 6, name: 'Donde no puedas encontrarme', price: 16.99, image: 'https://th.bing.com/th/id/OIP.N0NLgrWs9l3lbpq1M6CeTgAAAA?w=147&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
+      
+      ];
+
+      const cart = [];
+
+      const productGrid = document.getElementById('product-grid');
+      const cartItemsContainer = document.getElementById('cart-items-container');
+      const cartSidebar = document.getElementById('cart-sidebar');
+      const cartIcon = document.getElementById('cart-icon');
+      const cartCount = document.getElementById('cart-count');
+      const closeCartButton = document.getElementById('close-cart');
+      const checkoutButton = document.getElementById('checkout-btn');
+
+      function renderProducts() {
+          products.forEach(product => {
+              const productCard = document.createElement('div');
+              productCard.classList.add('product-card');
+              productCard.innerHTML = `
+                  <img src="${product.image}" alt="${product.name}">
+                  <div class="info">
+                      <h3>${product.name}</h3>
+                      <div class="price">$${product.price.toFixed(2)}</div>
+                      <button class="add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
+                  </div>
+              `;
+              productGrid.appendChild(productCard);
+          });
+      }
+
+      function updateCart() {
+          cartItemsContainer.innerHTML = '';
+          let total = 0;
+          cart.forEach(item => {
+              total += item.price;
+              const cartItem = document.createElement('div');
+              cartItem.classList.add('cart-item');
+              cartItem.innerHTML = `
+                  <div class="cart-item-inner">
+                      <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                      <div class="item-info">
+                          <h3>${item.name}</h3>
+                          <div class="price">$${item.price.toFixed(2)}</div>
+                      </div>
+                      <button class="remove-btn" data-id="${item.id}">&times;</button>
+                  </div>
+              `;
+              cartItemsContainer.appendChild(cartItem);
+          });
+          cartCount.innerText = cart.length;
+      }
+
+      function addToCart(productId) {
+          const product = products.find(p => p.id === productId);
+          if (product) {
+              cart.push(product);
+              updateCart();
+          }
+      }
+
+      
+        function removeFromCart(productId) {
+          const index = cart.findIndex(p => p.id === productId);
+          if (index !== -1) {
+              cart.splice(index, 1);
+              updateCart(); }
+        }
+
+
+      document.addEventListener('click', function (e) {
+          if (e.target.classList.contains('add-to-cart-btn')) {
+              const productId = parseInt(e.target.getAttribute('data-id'));
+              addToCart(productId);
+          } else if (e.target.classList.contains('remove-btn')) {
+              const productId = parseInt(e.target.getAttribute('data-id'));
+              removeFromCart(productId);
+          } else if (e.target.id === 'cart-icon') {
+              cartSidebar.classList.toggle('open');
+          } else if (e.target.id === 'close-cart') {
+              cartSidebar.classList.remove('open');
+          } else if (e.target.id === 'checkout-btn') {
+              alert('Proceed to checkout');
+          }
+      });
+
+      renderProducts();
+  </script>
+
+</body>
+
+</html>

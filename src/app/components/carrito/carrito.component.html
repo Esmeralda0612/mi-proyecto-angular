@@ -1,1 +1,84 @@
-<p>carrito works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../carrito/carrito.component.css">
+</head>
+<body class="carrito">
+    <div class="header-carrito">
+        <div class="logo-web-carrito">Bookstore</div>
+        <div class="busq-carrito">
+            <input type="text" id="search-input"  placeholder="Buscar">
+        </div>
+        <div class="icon-carrito">
+            <img src="img/shopping-bag-ui-svgrepo-com.svg" alt="bolsa">
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+    </div>
+    <main class="main-carrito">
+        <div class="product-grid" id="product-grid"></div>
+        <div class="product-carrito1">
+            <img src="https://1.bp.blogspot.com/-SMHQRYbFdTE/Xydh4k19DBI/AAAAAAAAMP8/2G6B_8jol5oDCy4bFwsPWmtgBrSV4LhvACNcBGAsYHQ/s2048/caraval.jpg" alt="Caraval">
+            <div class="info-carrito">
+                <h3>Caraval</h3>
+                <div class="price-carrito">$19.99</div>
+                <button class="add-to-cart-btn" data-id="1">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+        <div class="product-carrito2">
+            <img src="https://geekninja.com.br/wp-content/uploads/2020/12/Colecao-Anne-Os-3-primeiros-livros-1024x555.jpg" alt="Anne">
+            <div class="info-carrito">
+                <h3>Pack de Anna de las tejas verdes</h3>
+                <div class="price-carrito">$28.99</div>
+                <button class="add-to-cart-btn" data-id="1">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+        <div class="product-carrito3">
+            <img src="https://th.bing.com/th/id/OIP.gZWn7TyzriSvfP870oNJmQHaEK?w=254&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Alas de Sangre">
+            <div class="info-carrito">
+                <h3>Alas de sangre</h3>
+                <div class="price-carrito">$18.95</div>
+                <button class="add-to-cart-btn" data-id="1">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+        <div class="product-carrito4">
+            <img src="https://th.bing.com/th/id/OIP.pI_RNlDk7w7Fm6DQ1rBlZgHaD4?w=314&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="CNQMEQC">
+            <div class="info-carrito">
+                <h3>Cuando no queden más estrellas que contar</h3>
+                
+                <div class="price-carrito">$19.99</div>
+                <button class="add-to-cart-btn" data-id="1">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+        <div class="product-carrito5">
+            <img src="https://th.bing.com/th/id/OIP.AEv4Pc5S8nXbvZXlxaAi1QHaHa?w=172&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Faro">
+            <div class="info-carrito">
+                <h3>El faro de los amores dormidos</h3>
+                <div class="price-carrito">$19.99</div>
+                <button class="add-to-cart-btn" data-id="1">Añadir al carrito</button>
+            </div>
+        </div>
+            
+    </main>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <h2>Tu Carrito</h2>
+        <button class="clos-button" id="close-button">x</button> 
+        <div class="cart-items-container" id="cart-items-container"></div>
+        <button class="checkout-btn" id="checkout-btn">Pagar</button>
+
+        <div class="cart-sidebar-footer">
+            <button id="checkout-btn">Pagar</button>
+            <button id="close-cart">Cerrar</button>
+        </div>
+
+<script src="../js/carrito.js"></script>
