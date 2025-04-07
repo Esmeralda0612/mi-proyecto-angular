@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  background-color: #FFC2D1;
+}
+
+/* You can add global styles to this file, and also import other style files
 *{
     --text-color:black
 }
@@ -93,7 +97,7 @@ body{
     border-radius: 5px;
     transition: all 0.3s ease;
     display: flex;
-    gap: 20px;  /* Espacio entre cada palabra */
+    gap: 20px;  /* Espacio entre cada palabra
     justify-content: center;
     align-items: center;
 }
@@ -118,7 +122,7 @@ body{
     border-radius: 10px;
 }
 
-/* Dropdown */
+/* Dropdown
 .dropdown {
     position: relative;
 }
@@ -145,7 +149,7 @@ body{
     background-color: #ddd;
 }
 
-/* Mostrar el menú al hacer hover */
+/* Mostrar el menú al hacer hover 
 .dropdown:hover .dropdown-menu {
     display: block;
 }
@@ -199,7 +203,7 @@ body{
     justify-content: right;
     margin: 60px;
     padding: 20px;
-    
+
 }
 .main-carrito .product-carrito1 img{
     width: 20%;
@@ -207,7 +211,7 @@ body{
     margin: 0;
     padding: 0;
 
-    
+
 }
 .footer{
     text-align: center;
@@ -268,7 +272,7 @@ body{
 
     .main-img img{
         width: 100%;
-    }   
+    }
     .main-img{
         margin-left: 10px;
         margin-right: 10px;
@@ -288,14 +292,14 @@ body{
         display: flex;
     }
 
-   
+
     .mobile{
         display: none;
-       
+
     }
     .mobile.active{
         display: flex;
-       
+
     }
 
     .topnav{
@@ -373,4 +377,4 @@ body{
         font-size: 1.2em;
     }
 
-}
+} */
