@@ -7,7 +7,7 @@
 
 /* Header */
 .header-cart {
-    background-color: #ec23ac;
+    background-color: #ff84c6;
     color: #fff;
     padding: 15px 20px;
     display: flex;
@@ -37,7 +37,7 @@
 }
 
 .header-cart .cart-icon .cart-count {
-    background-color: #ffafe6;
+    background-color: #ff84c6;
     color: white;
     border-radius: 50%;
     padding: 5px 8px;
@@ -97,7 +97,7 @@
 
 .product-card .info .add-to-cart-btn {
     padding: 12px 20px;
-    background-color: #ec23ac;
+    background-color: #ff84c6;
     color: white;
     border: none;
     border-radius: 10px;
