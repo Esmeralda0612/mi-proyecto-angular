@@ -1,33 +1,35 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a routerLink="/home" routerLinkActive="activeButton">Navbar</a>
+<nav class="navbar navbar-expand-lg bgrosa">
+    <div class="container-fluid d-flex justify-content-between">
+      <a routerLink="/home" routerLinkActive="activeButton">Navbar</a> <!-- aqui va la imagen del logo -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a routerLink="/home" routerLinkActive="activeButton">Home</a>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav ">
+          <li class="nav-item m-2 p-2">
+            <a class="text-white text-decoration-none" routerLink="/home" routerLinkActive="activeButton">Home</a>
           </li>
-          <li class="nav-item">
-            <a routerLink="/catalogo" routerLinkActive="activeButton">Catálogo</a>
+          <li class="nav-item m-2 p-2">
+            <a class="text-white text-decoration-none" routerLink="/catalogo" routerLinkActive="activeButton">Catálogo</a>
           </li>
-          <li class="nav-item">
-            <a routerLink="/about" routerLinkActive="activeButton">About Us</a>
+          <li class="nav-item m-2 p-2">
+            <a class="text-white text-decoration-none" routerLink="/about" routerLinkActive="activeButton">About Us</a>
           </li>
-          <li class="nav-item">
-            <a routerLink="/contacto" routerLinkActive="activeButton">Contacto</a>
+          <li class="nav-item m-2 p-2">
+            <a class="text-white text-decoration-none" routerLink="/contacto" routerLinkActive="activeButton">Contacto</a>
           </li>
+          <!-- Revisar porque no funciona
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
+              Dropdown
             </a>
-            <!-- <ul class="dropdown-menu">
+            <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul> -->
-          </li>
+            </ul>
+          </li>-->
         </ul>
       </div>
     </div>

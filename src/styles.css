@@ -1,5 +1,6 @@
 body{
   background-color: #FFC2D1;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* You can add global styles to this file, and also import other style files
@@ -149,7 +150,7 @@ body{
     background-color: #ddd;
 }
 
-/* Mostrar el menú al hacer hover 
+/* Mostrar el menú al hacer hover
 .dropdown:hover .dropdown-menu {
     display: block;
 }
