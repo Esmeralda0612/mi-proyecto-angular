@@ -12,6 +12,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { UserComponent } from './components/user/user.component';
 import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
 
@@ -24,7 +26,8 @@ export const routes: Routes = [
   { path: 'footer', component: FooterComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'user', component: UserComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path: '**', component: PageNotFoundComponent}
 
 ];
 
