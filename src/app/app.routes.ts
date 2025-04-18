@@ -14,6 +14,7 @@ import { UserComponent } from './components/user/user.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { LibroComponent } from './components/libro/libro.component';
 
 export const routes: Routes = [
 
@@ -27,7 +28,8 @@ export const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'user', component: UserComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path: '**', component: PageNotFoundComponent}
+  {path: '**', component: PageNotFoundComponent},
+  {path: 'libro/:id', component: LibroComponent} // Ruta para el componente LibroComponent
 
 ];
 
