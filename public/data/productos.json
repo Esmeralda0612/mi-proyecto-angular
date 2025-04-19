@@ -1,0 +1,34 @@
+[
+    {
+      "id": 1,
+      "nombre": "Cien años de soledad",
+      "autor": "Gabriel García Márquez",
+      "precio": 20,
+      "descripcion": "Una obra maestra de la literatura latinoamericana.",
+      "imagen": "assets/img/cien_anos.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "El Principito",
+      "autor": "Antoine de Saint-Exupéry",
+      "precio": 15,
+      "descripcion": "Una historia conmovedora para grandes y chicos.",
+      "imagen": "assets/img/principito.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Caraval",
+        "autor": "Stephanie Garber",
+        "editorial": "Puck",
+        "isbn": 9788417854249,
+        "precio": 14.25,
+        "stock": 10,
+        "categoria": "Fantasía y Magia",
+        "sinopsis": "Bienvenido, bienvenido a Caraval. Ganar significa la libertad. Perder, renunciar a todos tus sueños. ¿Estás preparado? El juego ha empezado.",
+        "fechaPublicacion": 2021,
+        "idioma": "Castellano",
+        "formato": "Tapa blanda",
+        "paginas": 448
+      }
+  ]
+  

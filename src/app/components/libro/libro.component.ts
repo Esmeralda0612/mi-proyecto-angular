@@ -10,6 +10,7 @@ import { Libro } from '../../common/libro';
 
 export class LibroComponent {
   libro1: Libro = {
+    id: 1,
     nombre: 'Caraval',
     autor: 'Stephanie Garber',
     editorial: 'Puck',
@@ -25,6 +26,7 @@ export class LibroComponent {
     paginas: 448
   };
   libro2: Libro = {
+    id: 2,
     nombre: 'El juego del calamar',
     autor: 'Hwang Dong-hyuk',
     editorial: 'Planeta',
@@ -40,6 +42,7 @@ export class LibroComponent {
     paginas: 320
   };
   libro3: Libro = {
+    id: 3,
     nombre: 'El nombre del viento',
     autor: 'Patrick Rothfuss',
     editorial: 'Plaza & Janés',
