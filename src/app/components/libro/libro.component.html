@@ -1,14 +1,25 @@
 <div class="card mx-auto mt-5" style="max-width: 600px;">
     <img [src]="libro.imagen" class="card-img-top" alt="Portada">
     <div class="card-body">
-      <h5 class="card-title">{{ libro.titulo }}</h5>
+      <h5 class="card-title">{{ libro.nombre }}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{ libro.autor }}</h6>
       <p class="card-text">{{ libro.descripcion }}</p>
+      <p class="card-text"><strong>Precio: </strong>{{ libro.precio}}</p>
+      <p class="card-text"><strong>Género: </strong>{{ libro.genero }}</p>
+      <p class="card-text"><strong>Editorial: </strong>{{ libro.editorial }}</p>
+      <p class="card-text"><strong>ISBN: </strong>{{ libro.isbn }}</p>
+      <p class="card-text"><strong>Idioma: </strong>{{ libro.idioma }}</p>
+      <p class="card-text"><strong>Páginas: </strong>{{ libro.paginas }}</p>
+      <p class="card-text"><strong>Formato: </strong>{{ libro.formato }}</p>
+
       <button class="btn btn-success me-2" (click)="agregarAlCarrito()">Agregar al carrito</button>
       <button class="btn btn-secondary" (click)="volverAlCatalogo()">Volver al catálogo</button>
       <a routerLink="/catalogo" class="btn btn-secondary">Volver al catálogo</a>
 
     </div>
+    
+    
   </div>
 
 
+  

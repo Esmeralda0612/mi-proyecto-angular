@@ -11,6 +11,12 @@ import { Libro } from '../../common/libro';
 })
 
 export class LibroComponent implements OnInit {
+goToCatalog() {
+throw new Error('Method not implemented.');
+}
+addToCart() {
+throw new Error('Method not implemented.');
+}
   libro: any;
 
   Libro = [
