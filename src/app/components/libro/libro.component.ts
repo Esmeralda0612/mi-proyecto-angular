@@ -1,14 +1,58 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Libro } from '../../common/libro';
 
 @Component({
   selector: 'app-libro',
   imports: [],
+  standalone: true,
   templateUrl: './libro.component.html',
   styleUrl: './libro.component.css'
 })
 
-export class LibroComponent {
+export class LibroComponent implements OnInit {
+  libro: any;
+
+  Libro = [
+    { id: 1, titulo: 'Caraval', autor: 'Stephanie Garber',imagen:'assets/Caraval.jpg' ,descripcion: 'Distopía clásica' },
+    { id: 2, titulo: 'Cuando no queden más estrellas que contar', autor: 'María Martínez', descripcion: 'Romance', imagen: 'assets/CNQMEQC.jpg' },
+    { id: 3, titulo: 'El faro de los amores dormidos', autor: 'Andrea Longarela', descripcion: 'Roamnce', imagen: 'assets/FAROSleep.jpg' },
+    { id: 4, titulo: 'Ana de las Tejas Verdes', autor: 'L.M.Montgomery', descripcion: 'Clásico', imagen: 'assets/AnneEdicionEspecial.jpg' },
+    { id: 5, titulo: 'Destrozáme', autor: 'Taheret Mafi', descripcion: 'Distopía', imagen: 'assets/Destrozame1.jpg' },
+    { id: 6, titulo: 'Hija de la Tierra', autor: 'Andrea Longarela', descripcion: 'Fantasia y Romance', imagen: 'assets/HijadelaTierra.jpg' },
+    { id: 7, titulo: 'The Pumpkin Spice Café', autor: 'Laurie Gilmore', descripcion: 'Romance', imagen: 'assets/PumpkinSpiceCafe.jpg' },
+    { id: 8, titulo: 'El día que dejó de nevar en Alaska', autor: 'Alice Kellen', descripcion: 'Romance', imagen: 'assets/AlaskaAliceKellen.jpg' },
+    { id: 9, titulo: 'Saga: Los Juegos del Hambre', autor: 'Suzanne Collins', descripcion: 'Distopía', imagen: 'assets/SagaTHG.jpg' },
+    { id: 10, titulo: 'Un Corazón por Navidad', autor: 'Sophie Jomain', descripcion: 'Romance', imagen: 'assets/CorazonNavidad.jpg' },
+    { id: 11, titulo: 'A dos metros de ti', autor: 'Rachael Lippincott', descripcion: 'Romance', imagen: 'assets/A2MetrosdeTi.jpg' },
+    { id: 12, titulo: 'No confíes en Asher Hall', autor: 'Myriam M. Lejardi', descripcion: 'Romance', imagen: 'assets/NoConfiesenAsherHall.jpg' },
+    { id: 13, titulo: 'Donde no puedas encontrarme', autor: 'Tamara Molina', descripcion: 'Romance ', imagen: 'assets/DondeNoPuedasEncontrarme.jpg' },
+    { id: 14, titulo: 'Hasta que nos quedemos sin estrellas', autor: 'Inma Rubiales', descripcion: 'Romance', imagen: 'assets/HastaQueNosQuedemosSinEstrellas.jpg' },
+    { id: 15, titulo: 'Binding 13', autor: 'Chloe Walsh', descripcion: 'Romance', imagen: 'assets/Binding13.jpg' },
+    { id: 16, titulo: 'Saga: Meses a tu lado', autor: 'Joana Marcús', descripcion: 'Romance', imagen: 'assets/MesesATuLado.jpg' },
+  ];
+
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log('ID recibido:', id);
+    this.libro = this.libro.find((libro: { id: number; }) => libro.id === id);
+    console.log('Libro encontrado:', this.libro);
+  }
+
+  volverAlCatalogo(): void {
+    this.router.navigate(['/catalogo']);
+  }
+
+  agregarAlCarrito(): void {
+    alert(`${this.libro.titulo} agregado al carrito`);
+  }
+}
+
+
+  
+/*export class LibroComponent {
   libro1: Libro = {
     id: 1,
     nombre: 'Caraval',
@@ -25,36 +69,6 @@ export class LibroComponent {
     formato: 'Tapa blanda',
     paginas: 448
   };
-  libro2: Libro = {
-    id: 2,
-    nombre: 'El juego del calamar',
-    autor: 'Hwang Dong-hyuk',
-    editorial: 'Planeta',
-    isbn: 9788408261230,
-    precio: 18.90,
-    stock: 5,
-    imagen: 'https://m.media-amazon.com/images/I/81+2g1j4JtL._AC_UF894,1000_QL80_.jpg',
-    categoria: 'Thriller',
-    sinopsis: 'Un grupo de personas en crisis económica se ve atrapado en un juego mortal donde deben competir por un premio millonario.',
-    fechaPublicacion: new Date('2022-10-01'),
-    idioma: 'Castellano',
-    formato: 'Tapa dura',
-    paginas: 320
-  };
-  libro3: Libro = {
-    id: 3,
-    nombre: 'El nombre del viento',
-    autor: 'Patrick Rothfuss',
-    editorial: 'Plaza & Janés',
-    isbn: 9788401013920,
-    precio: 22.50,
-    stock: 8,
-    imagen: 'https://m.media-amazon.com/images/I/81+2g1j4JtL._AC_UF894,1000_QL80_.jpg',
-    categoria: 'Fantasía Épica',
-    sinopsis: 'La historia de Kvothe, un joven aventurero y músico que busca venganza y conocimiento en un mundo lleno de magia y misterio.',
-    fechaPublicacion: new Date('2007-03-27'),
-    idioma: 'Castellano',
-    formato: 'Tapa dura',
-    paginas: 662
-  };
+  
 }
+*/

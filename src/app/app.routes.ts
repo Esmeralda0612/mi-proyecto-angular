@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 
+
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -17,6 +18,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { LibroComponent } from './components/libro/libro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CatalogoProductosComponent } from './components/catalogo-productos/catalogo-productos.component';
+
 export const routes: Routes = [
 
   { path: 'about', component: AboutUsComponent },
@@ -29,11 +31,17 @@ export const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent},
+  
   {path: 'libro/:id', component: LibroComponent},// Ruta para el componente LibroComponent
+  { path: '', redirectTo: '/catalogo', pathMatch: 'full' },
+  {path: '**', redirectTo: '/catalogo' }, // opcional para manejar errores
   {path: 'catalogo-productos/:id', component: CatalogoProductosComponent},// Ruta para el componente CatalogoComponent
 ];
 
-//
+
+
+
+
 
 @NgModule({
   exports: [RouterModule],
@@ -62,4 +70,12 @@ export const routes: Routes = [
   ],
   // Removed bootstrap array as AppComponent is a standalone component
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    // You can add any initialization logic here if needed
+  }
+  ngDoBootstrap() {
+
+
+ }
+}
