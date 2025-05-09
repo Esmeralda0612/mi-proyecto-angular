@@ -25,17 +25,18 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'cart', component: CarritoComponent },
   { path: 'catalogo', component: CatalogoComponent },
+  { path: 'catalogo-productos/:id', component: CatalogoProductosComponent },// Ruta para el componente CatalogoComponent
   { path: 'navbar', component: NavbarComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'user', component: UserComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path: '**', component: PageNotFoundComponent},
-  
-  {path: 'libro/:id', component: LibroComponent},// Ruta para el componente LibroComponent
-  { path: '', redirectTo: '/catalogo', pathMatch: 'full' },
-  {path: '**', redirectTo: '/catalogo' }, // opcional para manejar errores
-  {path: 'catalogo-productos/:id', component: CatalogoProductosComponent},// Ruta para el componente CatalogoComponent
+  { path: '**', component: PageNotFoundComponent },
+
+  // {path: 'libro/:id', component: LibroComponent},// Ruta para el componente LibroComponent
+  // { path: '', redirectTo: '/catalogo', pathMatch: 'full' },
+  // {path: '**', redirectTo: '/catalogo' }, // opcional para manejar errores
+  // {path: 'catalogo-productos/:id', component: CatalogoProductosComponent},// Ruta para el componente CatalogoComponent
 ];
 
 
@@ -60,13 +61,13 @@ export const routes: Routes = [
     UserComponent, // Import UserComponent
     CatalogoProductosComponent, // Import CatalogoProductosComponent
     PageNotFoundComponent // Import PageNotFoundComponent
-    ],
-  
-      
-      
+  ],
+
+
+
   providers: [
     // Add any services you want to provide globally here
-    
+
   ],
   // Removed bootstrap array as AppComponent is a standalone component
 })
@@ -77,5 +78,5 @@ export class AppModule {
   ngDoBootstrap() {
 
 
- }
+  }
 }

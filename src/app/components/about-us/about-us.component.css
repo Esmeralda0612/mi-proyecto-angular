@@ -1,8 +1,57 @@
-.content-AU{
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #c2185b;
+}
+
+.about-section, .community-section {
+  padding: 4rem 0;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.about-img {
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.community-card {
+  background-color: #fff8fb;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.community-card:hover {
+  transform: scale(1.02);
+}
+
+.btn-cozy {
+  background-color: #ff69b4;
+  color: white;
+  border-radius: 25px;
+  padding: 0.6rem 1.5rem;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-cozy:hover {
+  background-color: #d63384;
+}
+
+/* .content-AU{
     margin: 0 auto;
     width: 50%;
     text-align: justify;
-    
+
 }
 .content-AU img{
     width: 30%;
@@ -33,4 +82,4 @@
         width: 50%;
         height: 50%;
     }
-}
+} */

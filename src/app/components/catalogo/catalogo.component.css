@@ -1,11 +1,46 @@
-/* General Styles */
+.catalog-title {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  color: #c2185b;
+  font-weight: bold;
+}
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+.card-body {
+  background-color: #fff;
+}
+.btn-buy {
+  background-color: #d63384;
+  color: #fff;
+  border: none;
+}
+.btn-buy:hover {
+  background-color: #c2185b;
+}
+
+/*
+General Styles
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Header */
+
 .header-cart {
     background-color: #ff84c6;
     color: #fff;
@@ -47,7 +82,7 @@
     right: -10px;
 }
 
-/* Main Content */
+/* Main Content
 .main-content {
     padding: 20px;
     margin-top: 20px;
@@ -111,7 +146,7 @@
     color: #333;
 }
 
-/* Cart Sidebar */
+/* Cart Sidebar
 .cart-sidebar {
     position: fixed;
     right: 0;
@@ -205,7 +240,7 @@
 }
 
 
-/* -- External Social Link CSS Styles -- */
+/* -- External Social Link CSS Styles --
 
 #source-link {
     top: 120px;
@@ -279,3 +314,4 @@
         line-height: 16px;
     }
 }
+*/

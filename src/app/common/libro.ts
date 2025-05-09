@@ -1,16 +1,11 @@
 export interface Libro {
-    id: number;
-    nombre: string;
-    autor: string;
-    editorial: string;
-    isbn: number;
-    precio: number;
-    stock: number;
-    imagen: string;
-    categoria: string;
-    sinopsis: string;
-    fechaPublicacion: Date;
-    idioma: string;
-    formato: string;
-    paginas: number;
+  Libros: LibroD[]
+}
+
+export interface LibroD {
+  id: number
+  titulo: string
+  autor: string
+  imagen: string
+  descripcion: string
 }
