@@ -11,7 +11,7 @@
         <div class="card-body text-center">
           <h6 class="card-title">{{book.titulo}}</h6>
           <p class="text-muted">{{book.autor}}</p>
-          <a class="btn btn-buy btn-sm">Ver Detalles</a>
+          <a [routerLink]="['/catalogo-productos', book.id]"  class="btn btn-buy btn-sm">Ver Detalles</a>
         </div>
       </div>
     </div>

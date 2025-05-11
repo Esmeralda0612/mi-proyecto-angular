@@ -5,7 +5,7 @@ import { DataService } from '../../servicios/data.service';
 
 @Component({
   selector: 'app-catalogo-productos',
-  imports: [RouterModule, RouterLink],
+  //imports: [RouterModule, RouterLink],
   templateUrl: './catalogo-productos.component.html',
   styleUrl: './catalogo-productos.component.css'
 })
@@ -20,26 +20,25 @@ export class CatalogoProductosComponent  implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    //this.loadONEBook();
+    this.loadONEBook();
   }
 
-  // loadONEBook() {
-    // const id = this.activatedRouted.snapshot.params['alias'];
+  loadONEBook() {
+    const id = this.activatedRouted.snapshot.params['alias'];
 
-    // this.dataservice.getBOOKbyId(id).subscribe(
-    //   {
-    //     next: (data) => {
-    //       this.LibroONE = data;
-    //       console.log(this.LibroONE);
-    //     },
-    //     error: (err) => {
-    //       console.error('Error data:', err);
-    //     },
-    //     complete: () => {
-    //       console.log('completed');
-    //     }
-    //   }
-
-    // );
-  // }
+    this.dataservice.getBookById(id).subscribe(
+      {
+        next: (data) => {
+          this.LibroONE = data;
+          console.log(this.LibroONE);
+        },
+        error: (err) => {
+          console.error('Error data:', err);
+        },
+        complete: () => {
+          console.log('completed');
+        }
+      }
+    );
+  }
 }

@@ -1,4 +1,5 @@
 <!-- <div class="container-fluid d-flex flex-column align-items-center ">
+  
   <h2 class="text-left">CARAVAL</h2>
   <img src=".\assets\Caraval.jpg" alt="Caraval" class="img-fluid" width="300" height="400">
   <p class="text-center">Bienvenido, bienvenido a Caraval. Ganar significa la libertad. Perder, renunciar a todos tus sueños.
@@ -15,3 +16,17 @@
   <p class="text-center">Entra en nuestro catálogo y descubre todo lo que tenemos para ti</p>
   <a routerLink="/catalogo" routerLinkActive="activeButton" class="btn btn-primary">Catálogo</a>
 </div> -->
+
+
+<div *NgIf="Libro" class="container p-3">
+  <h1 class="text-center">{{ LibroONE.titulo }}</h1>
+  <div class="text-center">
+    <img [src]="LibroONE.imagen" [alt]="LibroONE.titulo" class="img-fluid" style="max-width: 300px;">
+  </div>
+  <p><strong>Autor:</strong> {{ LibroONE.autor }}</p>
+  <p><strong>Descripción:</strong> {{ LibroONE.descripcion }}</p>
+  
+  <div class="text-center">
+    <a routerLink="/catalogo" class="btn btn-primary">Volver al Catálogo</a>
+  </div>
+</div>
